@@ -60,7 +60,7 @@ Regex("(\\d{2})-(\\d{3})").captures("31-234") == ["31", "234"]
 ## How to import into your project
 
 ### Manually
-Just copy SwiftyRegex.swift to your project. Everything is in one file.
+Just copy [SwiftyRegex.swift](https://github.com/tomekc/SwiftyRegex/blob/master/Sources/SwiftyRegex.swift) to your project. Everything is in one file.
 
 ### CocoaPods
 Podspec is due to be submitted to CoocaPods.
@@ -69,7 +69,7 @@ Podspec is due to be submitted to CoocaPods.
 
 ## Author
 
-SwiftyRegex has been written by Tomek Cejner by urgent need of comfortable use of regular expressions in his project.
+SwiftyRegex has been written by Tomek Cejner by urgent need of comfortable use of regular expressions in his project. Forks, pull requests are always welcome.
 
 Find me on Twitter as [@tomekcejner](http://twitter.com/tomekcejner)
 
