@@ -10,6 +10,8 @@
 		409FE6EC1C8CC93C00B08E27 /* SwiftyRegex.h in Headers */ = {isa = PBXBuildFile; fileRef = 409FE6EB1C8CC93C00B08E27 /* SwiftyRegex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		409FE6F31C8CC93C00B08E27 /* SwiftyRegex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 409FE6E81C8CC93C00B08E27 /* SwiftyRegex.framework */; };
 		409FE6F81C8CC93C00B08E27 /* SwiftyRegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409FE6F71C8CC93C00B08E27 /* SwiftyRegexTests.swift */; };
+		409FE7041C8CCA4B00B08E27 /* SwiftyRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409FE7031C8CCA4B00B08E27 /* SwiftyRegex.swift */; };
+		409FE7051C8CCA4B00B08E27 /* SwiftyRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409FE7031C8CCA4B00B08E27 /* SwiftyRegex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,7 @@
 		409FE6F21C8CC93C00B08E27 /* SwiftyRegexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyRegexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		409FE6F71C8CC93C00B08E27 /* SwiftyRegexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyRegexTests.swift; sourceTree = "<group>"; };
 		409FE6F91C8CC93C00B08E27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		409FE7031C8CCA4B00B08E27 /* SwiftyRegex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyRegex.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +56,7 @@
 		409FE6DE1C8CC93C00B08E27 = {
 			isa = PBXGroup;
 			children = (
+				409FE7021C8CCA3C00B08E27 /* Sources */,
 				409FE6EA1C8CC93C00B08E27 /* SwiftyRegex */,
 				409FE6F61C8CC93C00B08E27 /* SwiftyRegexTests */,
 				409FE6E91C8CC93C00B08E27 /* Products */,
@@ -84,6 +88,14 @@
 				409FE6F91C8CC93C00B08E27 /* Info.plist */,
 			);
 			path = SwiftyRegexTests;
+			sourceTree = "<group>";
+		};
+		409FE7021C8CCA3C00B08E27 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				409FE7031C8CCA4B00B08E27 /* SwiftyRegex.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				409FE7041C8CCA4B00B08E27 /* SwiftyRegex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				409FE6F81C8CC93C00B08E27 /* SwiftyRegexTests.swift in Sources */,
+				409FE7051C8CCA4B00B08E27 /* SwiftyRegex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +267,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -294,7 +308,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -305,6 +319,7 @@
 		409FE6FD1C8CC93C00B08E27 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -317,12 +332,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.japko.SwiftyRegex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		409FE6FE1C8CC93C00B08E27 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;

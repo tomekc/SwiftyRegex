@@ -13,24 +13,36 @@ class SwiftyRegexTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testMatching() {
+        let rex = Regex("\\d+")
+        XCTAssertTrue(rex.test("1234"))
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+    func testMatches() {
+        let rex = Regex("\\d+")
+        let matches = rex.matches("123 456 789")
+        XCTAssertEqual(matches.count, 3)
+        XCTAssertEqual(matches[0], "123")
+        XCTAssertEqual(matches[1], "456")
+        XCTAssertEqual(matches[2], "789")
+    }
+    
+    func testCaptureGroups() {
+        let rex = Regex("(\\d{2})-(\\d{3})")
+        XCTAssertTrue(rex.test("31-234"))
+        let groups = rex.captures("31-234")
+        XCTAssertEqual(groups[1], "31")
+        XCTAssertEqual(groups[2], "234")
+    }
+    
+    func testOperator() {
+        XCTAssertTrue("12345" =~ "\\d+")
     }
     
 }
