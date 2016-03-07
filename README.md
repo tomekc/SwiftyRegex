@@ -10,6 +10,7 @@ It is opinionated and focuses on most common use cases dealing with regular expr
 * to check if string matches to regex
 * to find matches of specified regex in string
 * to find capture groups `()` in string
+* regular expression **must be valid**, otherwise program will crash with runtime error
 
 Everything should be doable in oneliner, as simple as the task is.
 Compare JavaScript built-in regular expression class:
@@ -27,7 +28,7 @@ Wouldn't be cool to have something similar available in Mac/iOS programming?
 
 ## How to use
 
-Initialize instance of Regex class with regular expression. Runtime error will be thrown in case of bad syntax (it is programming error anyway).
+Initialize instance of Regex class with regular expression. Runtime error will be thrown in case of bad syntax. This is intended as bad regexp is likely a programming error anyway.
 
 ```swift
 let rex = Regex("\\d+")
@@ -44,16 +45,21 @@ I am for using custom/overloaded operators sparringly, but this one is borrowed 
 "12345" =~ "\\d+" == true
 ```
 
-Find matches of regex in string. If no matches are found, empty array is returned.
+### Find matches of regex in string. 
+
+Returns array of strings matching regexp. If no matches were found, empty array is returned, following Null Object pattern.
 
 ```swift  
 Regex("\\d+").matches("123 456") == [ "123", "456" ]  
 ```
 
-Find capture groups, useful while parsing simple text documents:
+### Find capture groups. 
+
+Useful for parsing simple text documents. At index zero there is full match,
+and starting with index 1, each capture groups follow.
 
 ```swift
-Regex("(\\d{2})-(\\d{3})").captures("31-234") == ["31", "234"]
+Regex("(\\d{2})-(\\d{3})").captures("31-234") == ["31-234", "31", "234"]
 ```
 
 
