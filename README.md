@@ -63,8 +63,14 @@ Regex("(\\d{2})-(\\d{3})").captures("31-234") == ["31", "234"]
 Just copy [SwiftyRegex.swift](https://github.com/tomekc/SwiftyRegex/blob/master/Sources/SwiftyRegex.swift) to your project. Everything is in one file.
 
 ### CocoaPods
-Podspec is due to be submitted to CoocaPods.
 
+```
+use_frameworks!
+
+pod "SwiftyRegex", "1.0.0"
+```
+
+Because of limitations, SwiftyRegex will be included as framework, so minimum deployment target is iOS 8 and OS X 10.9.
 
 
 ## Author
